@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>Basic</title>
+	<link rel='stylesheet' type='text/css' href='temperature.css'>
+</head>
+<body>
+
+	<script>
+		function number(){
+		var randomnumber = Math.random()*30-5;
+		if (randomnumber <10){
+			document.write("The weather is cold")
+			document.body.style.backgroundImage = "url('https://c.tadst.com/gfx/750x500/winter-lake.jpg?1')";
+		}
+		else if(randomnumber <20){
+			document.write("The weather is moderate")
+			document.body.style.backgroundImage = "url('https://images.canusa.de/img/regionen/usa/rocky-mountain-staaten/wyoming/teton-nationalpark/17katalog-grand-tetons-np.cr3000x1314-0x60.jpg')";
+		}else{
+			document.write("The weather is hot")
+			document.body.style.backgroundImage = "url('https://image.jimcdn.com/app/cms/image/transf/none/path/se5f978fe63c0750a/backgroundarea/i860fbabfd0916db0/version/1553267809/image.jpg')";
+		}
+		
+		}
+		number();
+
+
+	</script>
+
+</body>
+</html>
