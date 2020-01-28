@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>challange</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel='stylesheet' type='text/css' href='challenge.css'>
+</head>
+<body>
+
+	<div id="cont">
+		<div>
+			<button onclick="diceroll1()" id="b1"> Player 1 start game</button>
+			 <p id="player1"></p>
+		</div>
+		
+		<div class="player2">
+			<button onclick="diceroll2()" id="b2"> Player 2 start game</button>	
+			<p id="player2"></p>
+		</div>
+
+		<div>
+			<button onclick="winner()" id="w">Result:</button>
+			<p id="test"></p>
+		</div>
+	</div>
+
+	<script>
+	var playername=prompt('Player 1 please input name:','name1');
+	var playername2=prompt('Player 1 please input name:','name2');
+	sum=0;
+	sum2=0;
+
+
+	function diceroll1(){
+	for ( i = 0; i < 5; i++) {
+			
+	var dice= Math.ceil(Math.random()*6);
+	document.getElementById("player1").innerHTML=("roll number "+(i+1)+"= "+ dice+"<br>");
+	sum=sum+dice;
+	}
+		document.getElementById("player1").innerHTML=(playername+" your sum is: "+sum +"<br>");
+		return sum;
+	}
+
+	function diceroll2(){
+	for ( i = 0; i < 5; i++) {
+		
+	var dice= Math.ceil(Math.random()*6);
+	document.getElementById("player2").innerHTML=("roll number "+(i+1)+"= "+ dice+"<br>");
+	sum2=sum2+dice;}	
+	document.getElementById("player2").innerHTML=(playername2+" your sum is "+sum2+"<br>");
+	return sum2;	
+	}
+
+	function winner(){
+		if(sum>sum2){
+			document.getElementById("test").innerHTML=(playername+" is the winner")
+		}else if(sum2>sum){
+			document.getElementById("test").innerHTML=(playername2+" is the winner")
+		}else{
+			document.getElementById("test").innerHTML=("You both are winners")
+		}
+	}
+
+	/*diceroll1();
+	diceroll2();
+	winner();*/
+
+	function colorcreation(){
+			var genred=Math.floor(Math.random()*255);
+			var gengreen=Math.floor(Math.random()*255);
+			var genblue=Math.floor(Math.random()*255);
+			var totalcal = 'rgb(' + genred + ', ' + gengreen + ', ' + genblue + ')'; /* should look like that: rgb(10,20,30) */
+			return totalcal;
+		}
+
+		var myRandomRGB = colorcreation(); 		
+		document.body.style.backgroundColor = myRandomRGB;
+	</script>
+
+</body>
+</html>
